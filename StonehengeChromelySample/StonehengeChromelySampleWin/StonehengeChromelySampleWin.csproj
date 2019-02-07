@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+        <TargetFrameworks>netcoreapp2.1</TargetFrameworks>
+        <AssemblyName>StonehengeChromelySample</AssemblyName>
+        <RootNamespace>StonehengeChromelySample</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Chromely.CefGlue.Winapi" Version="68.0.0" />
+      <PackageReference Include="IctBaden.Stonehenge3" Version="3.3.5" />
+      <PackageReference Include="SharpZipLib" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="app\start.html" />
+      <EmbeddedResource Include="app\start.html" />
+    </ItemGroup>
+
+</Project>
