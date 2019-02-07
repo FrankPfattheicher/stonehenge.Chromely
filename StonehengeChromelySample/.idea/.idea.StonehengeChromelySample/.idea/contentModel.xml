@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_StonehengeChromelySample.560351546.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
+    <e p="C:\ICT Baden\stonehenge.Chromely\StonehengeChromelySample" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
       <e p="StonehengeChromelySample" t="IncludeRecursive">
-        <e p="Program.cs" t="Include" />
-        <e p="StonehengeChromelySample.csproj" t="IncludeRecursive" />
-        <e p="ViewModels" t="Include">
-          <e p="StartVm.cs" t="Include" />
-        </e>
         <e p="app" t="Include">
           <e p="start.html" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
+        <e p="CefLoader.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
+            <e p="net47" t="Include">
+              <e p="StonehengeChromelySample.AssemblyInfo.cs" t="Include" />
+            </e>
             <e p="netcoreapp2.1" t="Include">
               <e p="StonehengeChromelySample.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
+        <e p="Program.cs" t="Include" />
+        <e p="StonehengeChromelySample.csproj" t="IncludeRecursive" />
+        <e p="ViewModels" t="Include">
+          <e p="StartVm.cs" t="Include" />
+        </e>
       </e>
       <e p="StonehengeChromelySample.sln" t="IncludeFlat" />
-      <e p="packages" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\Frank\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Frank\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_StonehengeChromelySample.-1565367124.00" t="ExcludeRecursive" />
   </component>
 </project>

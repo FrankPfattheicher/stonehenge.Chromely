@@ -1,11 +1,14 @@
 ﻿using System;
-using Chromely.CefGlue.Gtk.BrowserWindow;
+using System.IO;
+using System.Reflection;
+using Chromely.CefGlue.Winapi.BrowserWindow;
 using Chromely.Core;
 using Chromely.Core.Host;
 using IctBaden.Stonehenge3.Hosting;
 using IctBaden.Stonehenge3.Kestrel;
 using IctBaden.Stonehenge3.Resources;
 using IctBaden.Stonehenge3.Vue;
+using Xilium.CefGlue;
 
 namespace StonehengeChromelySample
 {
@@ -29,25 +32,42 @@ namespace StonehengeChromelySample
                 Console.WriteLine("Failed to start stonehenge server");
             }
 
+            // ensure CEF runtime files are present
+            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) ?? ".";
+            Directory.SetCurrentDirectory(path);
+            try
+            {
+                CefRuntime.Load();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to load runtime: " + ex.Message);
+                Console.WriteLine("Installing CEF runtime from " + CefLoader.CefBuildsDownloadUrl);
+                CefLoader.Load();
+            }
+            
             // chromely frontend
-            var startUrl = "https://google.com";
+            var startUrl = host.BaseUrl;
 
             var config = ChromelyConfiguration
                 .Create()
                 .WithHostMode(WindowState.Normal, true)
-                .WithHostTitle("chromely")
-                .WithHostIconFile("chromely.ico")
+                .WithHostTitle(options.Title)
+                //.WithHostIconFile("chromely.ico")
                 .WithAppArgs(args)
                 .WithHostSize(1000, 600)
                 .WithStartUrl(startUrl);
 
             using (var window = new CefGlueBrowserWindow(config))
             {
-                return window.Run(args);
+                var exitCode = window.Run(args);
+                if (exitCode != 0)
+                {
+                    Console.WriteLine("Failed to start chromely frontend: code " + exitCode);
+                }
             }
             
-            
-            Console.ReadLine();
+            Console.WriteLine("Demo done.");
         }
     }
 }

@@ -2,9 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b93b13db-7899-4326-931d-1c866a8d7342" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.StonehengeChromelySample/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StonehengeChromelySample/ViewModels/StartVm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StonehengeChromelySample/app/start.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StonehengeChromelySample/CefLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StonehengeChromelySample/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StonehengeChromelySample/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StonehengeChromelySample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StonehengeChromelySample/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/StonehengeChromelySample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/StonehengeChromelySample.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/ViewModels/StartVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/ViewModels/StartVm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/bin/Debug/netcoreapp2.1/StonehengeChromelySample.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/bin/Debug/netcoreapp2.1/StonehengeChromelySample.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/bin/Debug/netcoreapp2.1/StonehengeChromelySample.dll" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/bin/Debug/netcoreapp2.1/StonehengeChromelySample.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/bin/Debug/netcoreapp2.1/StonehengeChromelySample.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/bin/Debug/netcoreapp2.1/StonehengeChromelySample.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/bin/Debug/netcoreapp2.1/StonehengeChromelySample.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/bin/Debug/netcoreapp2.1/StonehengeChromelySample.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.dll" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/Debug/netcoreapp2.1/StonehengeChromelySample.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/StonehengeChromelySample.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/StonehengeChromelySample.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/StonehengeChromelySample.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/StonehengeChromelySample.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/StonehengeChromelySample.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/StonehengeChromelySample.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StonehengeChromelySample/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/StonehengeChromelySample/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,59 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/StonehengeChromelySample/Program.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-              <folding>
-                <marker date="1549536684403" expanded="true" signature="6:138" ph="..." />
-                <marker date="1549536684403" expanded="true" signature="280:1636" ph="{...}" />
-                <marker date="1549536684403" expanded="true" signature="316:1634" ph="{...}" />
-                <marker date="1549536684403" expanded="true" signature="426:1628" ph="{...}" />
-                <marker date="1549536684403" expanded="true" signature="608:654" ph="{...}" />
-                <marker date="1549536684403" expanded="true" signature="901:1001" ph="{...}" />
-                <marker date="1549536684403" expanded="true" signature="1491:1560" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StonehengeChromelySample/ViewModels/StartVm.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-              <folding>
-                <marker date="1549534219001" expanded="true" signature="6:38" ph="..." />
-                <marker date="1549534219001" expanded="true" signature="163:604" ph="{...}" />
-                <marker date="1549534219001" expanded="true" signature="190:602" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StonehengeChromelySample/app/start.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-              <folding>
-                <element signature="e#418#424#0" expanded="true" />
-                <element signature="e#424#430#0" expanded="true" />
-                <element signature="e#430#436#0" expanded="true" />
-                <element signature="e#436#442#0" expanded="true" />
-                <element signature="e#655#661#0" expanded="true" />
-                <element signature="e#661#667#0" expanded="true" />
-                <element signature="e#667#673#0" expanded="true" />
-                <element signature="e#673#679#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,21 +45,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/StonehengeChromelySample/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/StonehengeChromelySample/CefLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/StonehengeChromelySample/ViewModels/StartVm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/StonehengeChromelySample/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/StonehengeChromelySample/ViewModels/StartVm.cs" />
         <option value="$PROJECT_DIR$/StonehengeChromelySample/app/start.html" />
+        <option value="$PROJECT_DIR$/StonehengeChromelySample/CefLoader.cs" />
         <option value="$PROJECT_DIR$/StonehengeChromelySample/Program.cs" />
+        <option value="$PROJECT_DIR$/StonehengeChromelySample/StonehengeChromelySample.csproj" />
+        <option value="$PROJECT_DIR$/StonehengeChromelySample/ViewModels/StartVm.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="323" />
-    <option name="y" value="75" />
+    <option name="x" value="59" />
+    <option name="y" value="23" />
     <option name="width" value="2063" />
     <option name="height" value="1421" />
   </component>
@@ -105,7 +75,6 @@
     </navigator>
     <panes>
       <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -122,13 +91,14 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="StonehengeChromelySample" type="24d0babc:SolutionExplorerModelNode" />
               <item name="StonehengeChromelySample" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="app" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ViewModels" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -136,7 +106,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ChromelyWork/BasicCrossPlatform/CefLoader.cs" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -190,11 +160,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549533078802</updated>
       <workItem from="1549533080452" duration="2225000" />
+      <workItem from="1549536914699" duration="4909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2225000" />
+    <option name="totallyTimeSpent" value="7134000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -206,29 +177,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="323" y="75" width="2063" height="1421" extended-state="0" />
-    <editor active="true" />
+    <frame x="59" y="23" width="2063" height="1421" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19137333" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19321018" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Performance Profiler" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3291829" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39844358" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39829192" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" weight="0.3299611" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32919255" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Unit Tests" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.3291829" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32841614" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="14" weight="0.3291829" />
+      <window_info anchor="bottom" id="Build" order="14" visible="true" weight="0.32841614" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -241,7 +213,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -250,18 +222,36 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/StonehengeChromelySample/Program.cs</url>
+          <line>60</line>
+          <properties documentPath="$PROJECT_DIR$/StonehengeChromelySample/Program.cs" initialLine="43">
+            <startOffsets>
+              <option value="2057" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2110" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/StonehengeChromelySample/ViewModels/StartVm.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="920">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding>
-            <marker date="1549534219001" expanded="true" signature="6:38" ph="..." />
-            <marker date="1549534219001" expanded="true" signature="163:604" ph="{...}" />
-            <marker date="1549534219001" expanded="true" signature="190:602" ph="{...}" />
+            <marker date="1549541375628" expanded="true" signature="6:244" ph="..." />
+            <marker date="1549541375628" expanded="true" signature="291:1717" ph="{...}" />
+            <marker date="1549541375628" expanded="true" signature="349:1715" ph="{...}" />
+            <marker date="1549541375628" expanded="true" signature="364:478" ph="/* ReSharper disable once MemberCanBePrivate.Global ... */" />
+            <marker date="1549541375628" expanded="true" signature="1054:1613" ph="{...}" />
+            <marker date="1549541375628" expanded="true" signature="1178:1550" ph="{...}" />
+            <marker date="1549541375628" expanded="true" signature="1285:1465" ph="{...}" />
+            <marker date="1549541375628" expanded="true" signature="1644:1700" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -270,31 +260,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StonehengeChromelySample/CefLoader.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding>
-            <element signature="e#418#424#0" expanded="true" />
-            <element signature="e#424#430#0" expanded="true" />
-            <element signature="e#430#436#0" expanded="true" />
-            <element signature="e#436#442#0" expanded="true" />
-            <element signature="e#655#661#0" expanded="true" />
-            <element signature="e#661#667#0" expanded="true" />
-            <element signature="e#667#673#0" expanded="true" />
-            <element signature="e#673#679#0" expanded="true" />
+            <marker date="1549538611902" expanded="false" signature="6:180" ph="..." />
+            <marker date="1549538611902" expanded="true" signature="216:5235" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="276:640" ph="/// Loads the necessary CEF runtime files from opensource.spotify.com ... " />
+            <marker date="1549538611902" expanded="true" signature="674:5233" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="1159:1284" ph="/// Load CEF runtime files. ... " />
+            <marker date="1549538611902" expanded="true" signature="1318:4582" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="2046:4169" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="2113:4155" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="2311:2465" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="2916:3053" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="3139:3522" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="3564:3716" ph="/* now we have all files in the temporary directory ... */" />
+            <marker date="1549538611902" expanded="true" signature="4202:4292" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="4312:4572" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="4463:4558" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="4657:5218" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="4821:4927" ph="{...}" />
+            <marker date="1549538611902" expanded="true" signature="5103:5208" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StonehengeChromelySample/StonehengeChromelySample.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/StonehengeChromelySample/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        <state relative-caret-position="400">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
           <folding>
-            <marker date="1549536684403" expanded="true" signature="6:138" ph="..." />
-            <marker date="1549536684403" expanded="true" signature="280:1636" ph="{...}" />
-            <marker date="1549536684403" expanded="true" signature="316:1634" ph="{...}" />
-            <marker date="1549536684403" expanded="true" signature="426:1628" ph="{...}" />
-            <marker date="1549536684403" expanded="true" signature="608:654" ph="{...}" />
-            <marker date="1549536684403" expanded="true" signature="901:1001" ph="{...}" />
-            <marker date="1549536684403" expanded="true" signature="1491:1560" ph="{...}" />
+            <marker date="1549539879692" expanded="false" signature="6:311" ph="..." />
+            <marker date="1549539879692" expanded="true" signature="347:2428" ph="{...}" />
+            <marker date="1549539879692" expanded="true" signature="383:2426" ph="{...}" />
+            <marker date="1549539879692" expanded="true" signature="493:2420" ph="{...}" />
+            <marker date="1549539879692" expanded="true" signature="675:721" ph="{...}" />
+            <marker date="1549539879692" expanded="true" signature="968:1068" ph="{...}" />
+            <marker date="1549539879692" expanded="true" signature="1277:1340" ph="{...}" />
+            <marker date="1549539879692" expanded="true" signature="1373:1611" ph="{...}" />
+            <marker date="1549539879692" expanded="true" signature="2110:2352" ph="{...}" />
+            <marker date="1549539879692" expanded="true" signature="2208:2338" ph="{...}" />
           </folding>
         </state>
       </provider>
