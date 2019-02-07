@@ -1,0 +1,51 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/home/frank/ICT Baden/stonehenge.Chromely/StonehengeChromelySample/StonehengeChromelySample/StonehengeChromelySample.csproj",
+    "projectName": "StonehengeChromelySample",
+    "projectPath": "/home/frank/ICT Baden/stonehenge.Chromely/StonehengeChromelySample/StonehengeChromelySample/StonehengeChromelySample.csproj",
+    "outputPath": "/home/frank/ICT Baden/stonehenge.Chromely/StonehengeChromelySample/StonehengeChromelySample/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.1"
+    ],
+    "frameworks": {
+      "netcoreapp2.1": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.1": {
+      "dependencies": {
+        "Chromely.CefGlue.Gtk": {
+          "target": "Package",
+          "version": "[68.0.0-beta02, )"
+        },
+        "IctBaden.Stonehenge3": {
+          "target": "Package",
+          "version": "[3.3.5, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.1.0, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StonehengeChromelySample", "StonehengeChromelySample\StonehengeChromelySample.csproj", "{192FBA19-849A-4DB8-8A8A-3DA52B973353}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{192FBA19-849A-4DB8-8A8A-3DA52B973353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192FBA19-849A-4DB8-8A8A-3DA52B973353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192FBA19-849A-4DB8-8A8A-3DA52B973353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192FBA19-849A-4DB8-8A8A-3DA52B973353}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
