@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using Chromely.CefGlue.Gtk.BrowserWindow;
 using Chromely.Core;
 using Chromely.Core.Helpers;
@@ -21,6 +22,9 @@ namespace StonehengeChromelySample
         {
             Console.WriteLine("Sample showing stonehenge on Chromely");
 
+            Console.WriteLine($"Running on {RuntimeEnvironment.GetRuntimeDirectory()}, CLR {RuntimeEnvironment.GetSystemVersion()}");
+            Console.WriteLine();
+
             // stonehenge backend
             var options = new StonehengeHostOptions
             {
@@ -35,6 +39,7 @@ namespace StonehengeChromelySample
             }
 
             // ensure CEF runtime files are present
+            Console.WriteLine("Check CEF framework is installed in the correct version");
             var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) ?? ".";
             Directory.SetCurrentDirectory(path);
             try
@@ -47,15 +52,15 @@ namespace StonehengeChromelySample
                 Console.WriteLine("Installing CEF runtime from " + CefLoader.CefBuildsDownloadUrl);
                 CefLoader.Load();
             }
-            
-            // chromely frontend
+
+            Console.WriteLine("Starting chromely frontend");
             var startUrl = host.BaseUrl;
 
             var config = ChromelyConfiguration
                 .Create()
                 .WithHostMode(WindowState.Normal, true)
                 .WithHostTitle(options.Title)
-                //.WithHostIconFile("chromely.ico")
+                .WithHostIconFile("stonehenge-chromely.ico")
                 .WithAppArgs(args)
 
                 // Linux specific

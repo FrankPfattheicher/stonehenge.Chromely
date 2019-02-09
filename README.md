@@ -1,7 +1,7 @@
 # Sample Application using stonehenge & Chromely libraries
 
 ## Chromely
-Chromely adresses the problem of creating platform independent user interfaces. 
+Chromely addresses the problem of creating platform independent user interfaces. 
 
 It is a .NET/.NET Core HTML5 Chromium desktop framework. It is focused on building apps based on embedded Chromium (CEF) without WinForms or WPF.
 
@@ -15,7 +15,7 @@ It handles as a MVVM framework and all code can be written in C#. The complexity
 For more information see: https://github.com/FrankPfattheicher/stonehenge3
 
 
-## This Sample
+## ![Stonehenge Chromely](icon64.png) This Sample
 The goal is bringing together both frameworks to be able to write cross platform applications only using C# and HTML5/CSS, no JavaScript required.
 
 It is also a playground to improve the user experience for application writers using the libraries. There is still a lot of missing documentation.

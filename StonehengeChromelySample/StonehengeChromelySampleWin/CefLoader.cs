@@ -69,7 +69,7 @@ namespace StonehengeChromelySample
                     using(var tarStream = new FileStream(tempTarFile, FileMode.Open))
                     {
                         var tar = TarArchive.CreateInputTarArchive(tarStream);
-                        tar.ProgressMessageEvent += (archive, entry, message) => Console.WriteLine(message);
+                        tar.ProgressMessageEvent += (archive, entry, message) => Console.WriteLine("Extracting " + entry.Name);
                         
                         Directory.CreateDirectory(tempDirectory);
                         tar.ExtractContents(tempDirectory);

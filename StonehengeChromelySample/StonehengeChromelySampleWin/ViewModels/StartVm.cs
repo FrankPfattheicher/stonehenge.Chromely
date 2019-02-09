@@ -1,11 +1,13 @@
 using System;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Chromely.CefGlue.Winapi.BrowserWindow;
 using IctBaden.Stonehenge3.Core;
 using IctBaden.Stonehenge3.Hosting;
 using IctBaden.Stonehenge3.ViewModel;
+// ReSharper disable UnusedMember.Global
 
 namespace StonehengeChromelySample.ViewModels
 {
@@ -23,6 +25,11 @@ namespace StonehengeChromelySample.ViewModels
             Assembly.GetAssembly(typeof(CefGlueBrowserWindow))
                 .GetName().Version.ToString();
 
+        public string RuntimeDirectory => RuntimeEnvironment.GetRuntimeDirectory();
+
+        public string ClrVersion => RuntimeEnvironment.GetSystemVersion();
+
+
         private readonly Task _updater;
         private readonly CancellationTokenSource _cancelUpdate;
         
@@ -35,7 +42,14 @@ namespace StonehengeChromelySample.ViewModels
                 {
                     while ((_updater != null) && !_cancelUpdate.IsCancellationRequested)
                     {
-                        Task.Delay(1000, _cancelUpdate.Token).Wait();
+                        try
+                        {
+                            Task.Delay(1000, _cancelUpdate.Token).Wait();
+                        }
+                        catch (TaskCanceledException)
+                        {
+                            break;
+                        }
                         NotifyPropertyChanged(nameof(TimeStamp));
                     }
                     // ReSharper disable once FunctionNeverReturns

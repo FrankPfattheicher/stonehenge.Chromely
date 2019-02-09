@@ -3,9 +3,11 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
-        <TargetFrameworks>netcoreapp2.1</TargetFrameworks>
+        <TargetFrameworks>net472;netcoreapp2.1</TargetFrameworks>
         <AssemblyName>StonehengeChromelySample</AssemblyName>
         <RootNamespace>StonehengeChromelySample</RootNamespace>
+        <StartupObject>StonehengeChromelySample.Program</StartupObject>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,6 +18,10 @@
 
     <ItemGroup>
       <None Remove="app\start.html" />
+      <None Remove="stonehenge-chromely.ico" />
+      <Content Include="stonehenge-chromely.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <EmbeddedResource Include="app\start.html" />
     </ItemGroup>
 

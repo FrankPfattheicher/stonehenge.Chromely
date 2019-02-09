@@ -16,6 +16,10 @@
 
     <ItemGroup>
       <None Remove="app\start.html" />
+      <None Remove="stonehenge-chromely.ico" />
+      <Content Include="stonehenge-chromely.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <EmbeddedResource Include="app\start.html" />
     </ItemGroup>
 
