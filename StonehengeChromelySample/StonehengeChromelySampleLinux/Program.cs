@@ -11,13 +11,13 @@ using IctBaden.Stonehenge3.Kestrel;
 using IctBaden.Stonehenge3.Resources;
 using IctBaden.Stonehenge3.Vue;
 using Xilium.CefGlue;
+// ReSharper disable RedundantArgumentDefaultValue
 
 namespace StonehengeChromelySample
 {
     internal static class Program
     {
         // ReSharper disable once UnusedParameter.Local
-        [STAThread]
         private static void Main(string[] args)
         {
             Console.WriteLine("Sample showing stonehenge on Chromely");
@@ -28,7 +28,9 @@ namespace StonehengeChromelySample
             // stonehenge backend
             var options = new StonehengeHostOptions
             {
-                Title = "Demo"
+                Title = "Demo",
+                ServerPushMode = ServerPushModes.LongPolling,
+                PollIntervalMs = 1000
             };
             var provider = StonehengeResourceLoader
                 .CreateDefaultLoader(new VueResourceProvider());
@@ -73,8 +75,10 @@ namespace StonehengeChromelySample
                 .WithCommandLineArg("disable-gpu-compositing", "1")
                 .WithCommandLineArg("disable-smooth-scrolling", "1")
                 .WithCommandLineArg("no-sandbox", "1")
+                .WithCommandLineArg("no-zygote", "1")
 
                 .WithHostSize(1000, 600)
+                .RegisterCustomrUrlScheme("http", "localhost")
                 .WithStartUrl(startUrl);
 
             using (var window = new CefGlueBrowserWindow(config))

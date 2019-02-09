@@ -80,7 +80,7 @@ namespace StonehengeChromelySample
                     var srcPathRelease = Path.Combine(tempDirectory, folderName, "Release");
                     var srcPathResources = Path.Combine(tempDirectory, folderName, "Resources");
                     var appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                    
+
                     CopyDirectory(srcPathRelease, appDirectory);
                     CopyDirectory(srcPathResources, appDirectory);
                 }

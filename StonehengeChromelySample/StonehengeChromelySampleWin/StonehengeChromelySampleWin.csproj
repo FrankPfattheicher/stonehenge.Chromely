@@ -8,6 +8,7 @@
         <RootNamespace>StonehengeChromelySample</RootNamespace>
         <StartupObject>StonehengeChromelySample.Program</StartupObject>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
     </PropertyGroup>
 
     <ItemGroup>
