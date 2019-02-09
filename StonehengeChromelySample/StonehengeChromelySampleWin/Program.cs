@@ -28,7 +28,9 @@ namespace StonehengeChromelySample
             Console.WriteLine("Starting stonehenge backend");
             var options = new StonehengeHostOptions
             {
-                Title = "Demo"
+                Title = "Demo",
+                ServerPushMode = ServerPushModes.LongPolling,
+                PollIntervalMs = 1000
             };
             var provider = StonehengeResourceLoader
                 .CreateDefaultLoader(new VueResourceProvider());

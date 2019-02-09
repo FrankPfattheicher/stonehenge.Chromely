@@ -25,6 +25,10 @@ namespace StonehengeChromelySample.ViewModels
             Assembly.GetAssembly(typeof(CefGlueBrowserWindow))
                 .GetName().Version.ToString();
 
+        public string DemoAppVersion =>
+            Assembly.GetAssembly(GetType())
+                .GetName().Version.ToString();
+
         public string RuntimeDirectory => RuntimeEnvironment.GetRuntimeDirectory();
 
         public string ClrVersion => RuntimeEnvironment.GetSystemVersion();
