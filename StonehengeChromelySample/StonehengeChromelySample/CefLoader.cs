@@ -2,11 +2,12 @@ using System;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
+using Chromely.Core.Infrastructure;
 using ICSharpCode.SharpZipLib.BZip2;
 using ICSharpCode.SharpZipLib.Tar;
 using Xilium.CefGlue;
 
-namespace StonehengeChromelySample
+namespace Chromely.CefGlue.Loader
 {
     //TODO: Move this class to Chromely project
     
@@ -34,10 +35,15 @@ namespace StonehengeChromelySample
         /// <exception cref="Exception"></exception>
         public static void Load()
         {
-            var arch = System.Runtime.InteropServices.RuntimeInformation.OSArchitecture.ToString().ToLower();
+            Log.Info("CefLoader: Installing CEF runtime from " + CefBuildsDownloadUrl);
+
+            // Do NOT use OSArchitecture but current process bitness instead
+            var arch = Environment.Is64BitProcess ? "64" : "32";
             var platform = CefRuntime.Platform.ToString().ToLower() + arch.Replace("x", "");
             var version = string.Join(".", CefRuntime.ChromeVersion.Split('.')[2]);
             
+            Log.Info($"CefLoader: Load CEF for {platform}, version {version}");
+
             var indexUrl = CefBuildsDownloadIndex(platform);
             var binaryNamePattern = $@"""((cef_binary_[0-9]+\.{version.Replace(".", @"\.")}\.[0-9]+\.(.*)_{platform}_minimal).tar.bz2)""";
 
@@ -53,41 +59,49 @@ namespace StonehengeChromelySample
                     var found = new Regex(binaryNamePattern).Match(index);
                     if (!found.Success)
                     {
-                        throw new Exception($"CEF for chrome version {CefRuntime.ChromeVersion} not found.");
+                        var message = $"CEF for chrome version {CefRuntime.ChromeVersion} not found.";
+                        Log.Fatal("CefLoader: " + message);
+                        throw new Exception(message);
                     }
 
                     var archiveName = found.Groups[1].Value;
                     var folderName = found.Groups[2].Value;
                     var downloadUrl = CefDownloadUrl(archiveName);
+
+                    Log.Info($"CefLoader: Loading {archiveName}");
+                    client.DownloadProgressChanged += Client_DownloadProgressChanged;
                     client.DownloadFile(downloadUrl, tempBz2File);
-                    
-                    using(var inStream = new FileStream(tempBz2File, FileMode.Open))
+
+                    Log.Info("CefLoader: Decompressing BZ2 archive");
+                    using (var inStream = new FileStream(tempBz2File, FileMode.Open))
                     using (var outStream = new FileStream(tempTarFile, FileMode.Create))
                     {
                         BZip2.Decompress(inStream, outStream, true);                        
                     }
-                    using(var tarStream = new FileStream(tempTarFile, FileMode.Open))
+                    Log.Info("CefLoader: Decompressing TAR archive");
+                    using (var tarStream = new FileStream(tempTarFile, FileMode.Open))
                     {
                         var tar = TarArchive.CreateInputTarArchive(tarStream);
-                        tar.ProgressMessageEvent += (archive, entry, message) => Console.WriteLine("Extracting " + entry.Name);
-
+                        tar.ProgressMessageEvent += (archive, entry, message) => Log.Info("CefLoader: Extracting " + entry.Name);
+                        
                         Directory.CreateDirectory(tempDirectory);
                         tar.ExtractContents(tempDirectory);
                     }
-                    
+
+                    Log.Info("CefLoader: Copy files to application directory");
                     // now we have all files in the temporary directory
-                    // we have to copy the 'Release' and 'Resources' folder to the project directory
+                    // we have to copy the 'Release' and 'Resources' folder to the application directory
                     var srcPathRelease = Path.Combine(tempDirectory, folderName, "Release");
                     var srcPathResources = Path.Combine(tempDirectory, folderName, "Resources");
                     var appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-
+                    
                     CopyDirectory(srcPathRelease, appDirectory);
                     CopyDirectory(srcPathResources, appDirectory);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Log.Fatal("CefLoader: " + ex.Message);
                 throw;
             }
             finally
@@ -99,6 +113,12 @@ namespace StonehengeChromelySample
                     Directory.Delete(tempDirectory, true);
                 }
             }
+        }
+
+        private static void Client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            var percent = e.BytesReceived * 100.0 / e.TotalBytesToReceive;
+            Log.Info($"CefLoader: Progress = {percent:F1}%");
         }
 
         private static void CopyDirectory(string srcPath, string dstPath)

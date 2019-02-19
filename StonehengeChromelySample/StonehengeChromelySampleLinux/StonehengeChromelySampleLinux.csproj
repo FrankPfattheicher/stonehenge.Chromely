@@ -6,22 +6,36 @@
         <TargetFrameworks>netcoreapp2.1</TargetFrameworks>
         <AssemblyName>StonehengeChromelySample</AssemblyName>
         <RootNamespace>StonehengeChromelySample</RootNamespace>
-        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <Version>1.1.0</Version>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.1|AnyCPU'">
+      <DefineConstants>TRACE;LINUX</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Chromely.CefGlue.Gtk" Version="68.0.0-beta02" />
-      <PackageReference Include="IctBaden.Stonehenge3" Version="3.3.5" />
-      <PackageReference Include="SharpZipLib" Version="1.1.0" />
+      <Compile Include="..\StonehengeChromelySample\CefLoader.cs" Link="CefLoader.cs" />
+      <Compile Include="..\StonehengeChromelySample\Program.cs" Link="Program.cs" />
+      <Compile Include="..\StonehengeChromelySample\ViewModels\StartVm.cs" Link="ViewModels\StartVm.cs" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="app\start.html" />
-      <None Remove="stonehenge-chromely.ico" />
-      <Content Include="stonehenge-chromely.ico">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
-      <EmbeddedResource Include="app\start.html" />
+      <EmbeddedResource Include="..\StonehengeChromelySample\app\start.html" Link="app\start.html" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Chromely.CefGlue.Gtk" Version="68.0.0-beta02" />
+      <PackageReference Include="IctBaden.Stonehenge3" Version="3.3.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="app\" />
+      <Folder Include="ViewModels\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Chromely.CefGlue.Loader\Chromely.CefGlue.Loader.csproj" />
     </ItemGroup>
 
 </Project>

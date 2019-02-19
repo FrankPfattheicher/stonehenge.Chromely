@@ -2,8 +2,14 @@
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using Chromely.CefGlue.Loader;
+#if LINUX
 using Chromely.CefGlue.Gtk.BrowserWindow;
+#else
+using Chromely.CefGlue.Winapi.BrowserWindow;
+#endif
 using Chromely.Core;
+// ReSharper disable once RedundantUsingDirective
 using Chromely.Core.Helpers;
 using Chromely.Core.Host;
 using IctBaden.Stonehenge3.Hosting;
@@ -11,7 +17,6 @@ using IctBaden.Stonehenge3.Kestrel;
 using IctBaden.Stonehenge3.Resources;
 using IctBaden.Stonehenge3.Vue;
 using Xilium.CefGlue;
-// ReSharper disable RedundantArgumentDefaultValue
 
 namespace StonehengeChromelySample
 {
@@ -21,24 +26,10 @@ namespace StonehengeChromelySample
         private static void Main(string[] args)
         {
             Console.WriteLine("Sample showing stonehenge on Chromely");
+            Console.WriteLine();
 
             Console.WriteLine($"Running on {RuntimeEnvironment.GetRuntimeDirectory()}, CLR {RuntimeEnvironment.GetSystemVersion()}");
             Console.WriteLine();
-
-            // stonehenge backend
-            var options = new StonehengeHostOptions
-            {
-                Title = "Demo",
-                ServerPushMode = ServerPushModes.LongPolling,
-                PollIntervalMs = 1000
-            };
-            var provider = StonehengeResourceLoader
-                .CreateDefaultLoader(new VueResourceProvider());
-            var host = new KestrelHost(provider, options);
-            if (!host.Start(options.Title, false, "localhost", 8888))
-            {
-                Console.WriteLine("Failed to start stonehenge server");
-            }
 
             // ensure CEF runtime files are present
             Console.WriteLine("Check CEF framework is installed in the correct version");
@@ -51,32 +42,49 @@ namespace StonehengeChromelySample
             catch (Exception ex)
             {
                 Console.WriteLine("Failed to load runtime: " + ex.Message);
-                Console.WriteLine("Installing CEF runtime from " + CefLoader.CefBuildsDownloadUrl);
                 CefLoader.Load();
             }
 
+            // Starting stonehenge backend
+            Console.WriteLine("Starting stonehenge backend");
+            var options = new StonehengeHostOptions
+            {
+                Title = "Demo",
+                ServerPushMode = ServerPushModes.LongPolling,
+                PollIntervalMs = 1000
+            };
+            var provider = StonehengeResourceLoader
+                .CreateDefaultLoader(new VueResourceProvider());
+            var host = new KestrelHost(provider, options);
+            if (!host.Start("localhost", 8888))
+            {
+                Console.WriteLine("Failed to start stonehenge server");
+            }
+
+            // Starting chromely frontend
             Console.WriteLine("Starting chromely frontend");
             var startUrl = host.BaseUrl;
 
             var config = ChromelyConfiguration
                 .Create()
+                // ReSharper disable once RedundantArgumentDefaultValue
                 .WithHostMode(WindowState.Normal, true)
                 .WithHostTitle(options.Title)
                 .WithHostIconFile("stonehenge-chromely.ico")
                 .WithAppArgs(args)
-
-                // Linux specific
+#if LINUX
+                //TODO: Can be removed using Chromely v0.9.3
                 .WithCustomSetting(CefSettingKeys.MultiThreadedMessageLoop, false)
                 .WithCustomSetting(CefSettingKeys.SingleProcess, true)
                 .WithCustomSetting(CefSettingKeys.NoSandbox, true)
-                
+
                 .WithCommandLineArg("disable-extensions", "1")
                 .WithCommandLineArg("disable-gpu", "1")
                 .WithCommandLineArg("disable-gpu-compositing", "1")
                 .WithCommandLineArg("disable-smooth-scrolling", "1")
                 .WithCommandLineArg("no-sandbox", "1")
                 .WithCommandLineArg("no-zygote", "1")
-
+#endif
                 .WithHostSize(1000, 600)
                 .RegisterCustomrUrlScheme("http", "localhost")
                 .WithStartUrl(startUrl);
