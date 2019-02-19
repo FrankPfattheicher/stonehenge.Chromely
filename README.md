@@ -21,7 +21,8 @@ The goal is bringing together both frameworks to be able to write cross platform
 It is also a playground to improve the user experience for application writers using the libraries. There is still a lot of missing documentation.
 
 #### Notes
-* This code is work in progress!
+* This code is work in progress!    
+  To see what's going on look at the [ReleaseNotes...](ReleaseNotes.md)
 * I will focus on .NET Core to be platform independent
 * Running Windows .NET Framework 4.7.2 is also targeted
 * Still not everything working as expected

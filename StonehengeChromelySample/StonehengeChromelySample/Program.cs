@@ -22,6 +22,10 @@ namespace StonehengeChromelySample
 {
     internal static class Program
     {
+        private static string ChromiumVersion => 
+            Assembly.GetAssembly(typeof(CefGlueBrowserWindow))
+                .GetName().Version.ToString();
+
         // ReSharper disable once UnusedParameter.Local
         private static void Main(string[] args)
         {
@@ -29,6 +33,7 @@ namespace StonehengeChromelySample
             Console.WriteLine();
 
             Console.WriteLine($"Running on {RuntimeEnvironment.GetRuntimeDirectory()}, CLR {RuntimeEnvironment.GetSystemVersion()}");
+            Console.WriteLine($"Chromium version {ChromiumVersion}");
             Console.WriteLine();
 
             // ensure CEF runtime files are present
