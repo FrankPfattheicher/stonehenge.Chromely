@@ -39,8 +39,9 @@ namespace Chromely.CefGlue.Loader
             Log.Info("CefLoader: Installing CEF runtime from " + CefBuildsDownloadUrl);
 
             // Do NOT use OSArchitecture but current process bitness instead
-            var arch = Environment.Is64BitProcess ? "64" : "32";
-            var platform = CefRuntime.Platform.ToString().ToLower() + arch.Replace("x", "");
+            var arch = System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture
+                .ToString().ToLower().Replace("x", "");
+            var platform = CefRuntime.Platform.ToString().ToLower() + arch;
             var version = string.Join(".", CefRuntime.ChromeVersion.Split('.')[2]);
             
             Log.Info($"CefLoader: Load CEF for {platform}, version {version}");
@@ -60,7 +61,7 @@ namespace Chromely.CefGlue.Loader
                     var found = new Regex(binaryNamePattern).Match(index);
                     if (!found.Success)
                     {
-                        var message = $"CEF for chrome version {CefRuntime.ChromeVersion} not found.";
+                        var message = $"CEF for chrome version {CefRuntime.ChromeVersion} platform {platform} not found.";
                         Log.Fatal("CefLoader: " + message);
                         throw new Exception(message);
                     }
