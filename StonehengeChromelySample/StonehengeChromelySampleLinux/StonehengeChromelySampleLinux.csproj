@@ -8,6 +8,7 @@
         <RootNamespace>StonehengeChromelySample</RootNamespace>
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <Version>1.1.0</Version>
+        <PackageVersion>1.1.1</PackageVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.1|AnyCPU'">

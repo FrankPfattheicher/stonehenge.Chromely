@@ -70,7 +70,7 @@ namespace ICSharpCode.SharpZipLib.Core
         /// <param name="source">The stream to source data from.</param>
         /// <param name="destination">The stream to write data to.</param>
         /// <param name="buffer">The buffer to use during copying.</param>
-        static public void Copy(Stream source, Stream destination, byte[] buffer)
+        static public void Copy(Stream source, Stream destination, byte[] buffer, Action<long> progress = null)
         {
             if (source == null)
             {
@@ -107,6 +107,7 @@ namespace ICSharpCode.SharpZipLib.Core
                     destination.Flush();
                     copying = false;
                 }
+                progress?.Invoke(source.Position);
             }
         }
 

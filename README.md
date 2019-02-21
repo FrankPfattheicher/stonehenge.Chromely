@@ -8,7 +8,7 @@ It is a .NET/.NET Core HTML5 Chromium desktop framework. It is focused on buildi
 For more information see: https://github.com/chromelyapps/Chromely
 
 ## stonehenge
-stonehenge addresses the problem of creating HTML5 based applications without the need to write JavaScript code.
+stonehenge addresses the problem of creating HTML5 based applications without the need to write JavaScript code. Internally it is using **Vue.js** as client framework.
 
 It handles as a MVVM framework and all code can be written in C#. The complexity using a JavaScript client framework is abstracted, the still necessary code is generated automatically.
 

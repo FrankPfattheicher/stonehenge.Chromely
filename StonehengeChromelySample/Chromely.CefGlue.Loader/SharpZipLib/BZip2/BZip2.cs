@@ -15,7 +15,7 @@ namespace ICSharpCode.SharpZipLib.BZip2
         /// <param name="inStream">The readable stream containing data to decompress.</param>
         /// <param name="outStream">The output stream to receive the decompressed data.</param>
         /// <param name="isStreamOwner">Both streams are closed on completion if true.</param>
-        public static void Decompress(Stream inStream, Stream outStream, bool isStreamOwner)
+        public static void Decompress(Stream inStream, Stream outStream, bool isStreamOwner, Action<int> progressPercent = null)
         {
             if (inStream == null || outStream == null)
             {
@@ -27,7 +27,11 @@ namespace ICSharpCode.SharpZipLib.BZip2
                 using (BZip2InputStream bzipInput = new BZip2InputStream(inStream))
                 {
                     bzipInput.IsStreamOwner = isStreamOwner;
-                    Core.StreamUtils.Copy(bzipInput, outStream, new byte[4096]);
+                    Core.StreamUtils.Copy(bzipInput, outStream, new byte[4096], progressBytes =>
+                    {
+                        var percent = (int)(progressBytes * 100.0 / inStream.Length);
+                        progressPercent?.Invoke(percent);
+                    });
                 }
             }
             finally

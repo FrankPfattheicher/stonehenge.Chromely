@@ -4,6 +4,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using Chromely.Core.Infrastructure;
 using ICSharpCode.SharpZipLib.BZip2;
+using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.Tar;
 using Xilium.CefGlue;
 
@@ -70,13 +71,13 @@ namespace Chromely.CefGlue.Loader
 
                     Log.Info($"CefLoader: Loading {archiveName}");
                     client.DownloadProgressChanged += Client_DownloadProgressChanged;
-                    client.DownloadFile(downloadUrl, tempBz2File);
+                    client.DownloadFileTaskAsync(downloadUrl, tempBz2File).Wait();
 
                     Log.Info("CefLoader: Decompressing BZ2 archive");
                     using (var inStream = new FileStream(tempBz2File, FileMode.Open))
                     using (var outStream = new FileStream(tempTarFile, FileMode.Create))
                     {
-                        BZip2.Decompress(inStream, outStream, true);                        
+                        BZip2.Decompress(inStream, outStream, true, DecompressProgressChanged);
                     }
                     Log.Info("CefLoader: Decompressing TAR archive");
                     using (var tarStream = new FileStream(tempTarFile, FileMode.Open))
@@ -115,10 +116,35 @@ namespace Chromely.CefGlue.Loader
             }
         }
 
+        private static int lastPercent = 0;
+
+        private static void DecompressProgressChanged(int percent)
+        {
+            if(percent < 10)
+            {
+                lastPercent = 0;
+            }
+            if((percent % 10 != 0) || percent == lastPercent)
+            {
+                return;   
+            }
+            lastPercent = percent;
+            Log.Info($"CefLoader: Decompress progress = {percent}%");
+        }
+
         private static void Client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            var percent = e.BytesReceived * 100.0 / e.TotalBytesToReceive;
-            Log.Info($"CefLoader: Progress = {percent:F1}%");
+            var percent = (int)(e.BytesReceived * 100.0 / e.TotalBytesToReceive);
+            if(percent < 10)
+            {
+                lastPercent = 0;
+            }
+            if((percent % 10 != 0) || percent == lastPercent)
+            {
+                return;   
+            }
+            lastPercent = percent;
+            Log.Info($"CefLoader: Download progress = {percent}%");
         }
 
         private static void CopyDirectory(string srcPath, string dstPath)
