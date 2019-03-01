@@ -55,6 +55,7 @@ namespace StonehengeChromelySample
             var options = new StonehengeHostOptions
             {
                 Title = "Demo",
+                StartPage = "start",
                 ServerPushMode = ServerPushModes.LongPolling,
                 PollIntervalMs = 1000
             };
