@@ -14,10 +14,6 @@ namespace StonehengeChromelySample
 {
     internal static class Program
     {
-        private static string ChromiumVersion => 
-            Assembly.GetAssembly(typeof(IChromelyWindow))
-                .GetName().Version.ToString();
-
         // ReSharper disable once UnusedParameter.Local
         private static void Main(string[] args)
         {
@@ -25,13 +21,11 @@ namespace StonehengeChromelySample
             Console.WriteLine();
 
             Console.WriteLine($"Running on {RuntimeEnvironment.GetRuntimeDirectory()}, CLR {RuntimeEnvironment.GetSystemVersion()}");
-            Console.WriteLine($"Chromium version {ChromiumVersion}");
             Console.WriteLine();
 
             // ensure CEF runtime files are present
             Console.WriteLine("Check CEF framework is installed in the correct version");
-            var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) ?? ".";
-            var p2 = AppDomain.CurrentDomain.BaseDirectory;
+            var path = AppDomain.CurrentDomain.BaseDirectory;
             Directory.SetCurrentDirectory(path);
 
             // Starting stonehenge backend

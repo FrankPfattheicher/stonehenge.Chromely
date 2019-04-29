@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -19,8 +20,7 @@ namespace StonehengeChromelySample.ViewModels
         public string TimeStamp => DateTime.Now.ToLongTimeString();
         
         public string StonehengeVersion => 
-            Assembly.GetAssembly(typeof(StonehengeHostOptions))
-            .GetName().Version.ToString();
+            FileVersionInfo.GetVersionInfo(Assembly.GetAssembly(typeof(StonehengeHostOptions)).Location).ProductVersion;
         
         public string ChromelyVersion  => 
             Assembly.GetAssembly(typeof(ChromelyConfiguration))
@@ -32,6 +32,7 @@ namespace StonehengeChromelySample.ViewModels
 
         
         public string RuntimeDirectory => RuntimeEnvironment.GetRuntimeDirectory();
+        public bool IsSelfHosted { get; set; }
 
         public string ClrVersion => RuntimeEnvironment.GetSystemVersion();
 
@@ -45,6 +46,10 @@ namespace StonehengeChromelySample.ViewModels
             _cancelUpdate = new CancellationTokenSource();
             _updater = new Task(UpdateView, _cancelUpdate.Token);
             _updater.Start();
+            
+            var runtime = Path.GetFullPath(Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "."));
+            var app = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "."));
+            IsSelfHosted = runtime == app;
         }
 
         private void UpdateView()
