@@ -30,6 +30,7 @@ namespace StonehengeChromelySample.ViewModels
             Assembly.GetAssembly(GetType())
                 .GetName().Version.ToString();
 
+        
         public string RuntimeDirectory => RuntimeEnvironment.GetRuntimeDirectory();
 
         public string ClrVersion => RuntimeEnvironment.GetSystemVersion();

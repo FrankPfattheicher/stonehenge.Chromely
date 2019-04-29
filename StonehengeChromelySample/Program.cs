@@ -2,28 +2,20 @@
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Chromely.CefGlue.Loader;
-#if LINUX
-using Chromely.CefGlue.Gtk.BrowserWindow;
-#else
-using Chromely.CefGlue.Winapi.BrowserWindow;
-#endif
+using Chromely.CefGlue;
 using Chromely.Core;
-// ReSharper disable once RedundantUsingDirective
-using Chromely.Core.Helpers;
 using Chromely.Core.Host;
 using IctBaden.Stonehenge3.Hosting;
 using IctBaden.Stonehenge3.Kestrel;
 using IctBaden.Stonehenge3.Resources;
 using IctBaden.Stonehenge3.Vue;
-using Xilium.CefGlue;
 
 namespace StonehengeChromelySample
 {
     internal static class Program
     {
         private static string ChromiumVersion => 
-            Assembly.GetAssembly(typeof(CefGlueBrowserWindow))
+            Assembly.GetAssembly(typeof(IChromelyWindow))
                 .GetName().Version.ToString();
 
         // ReSharper disable once UnusedParameter.Local
@@ -39,16 +31,8 @@ namespace StonehengeChromelySample
             // ensure CEF runtime files are present
             Console.WriteLine("Check CEF framework is installed in the correct version");
             var path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) ?? ".";
+            var p2 = AppDomain.CurrentDomain.BaseDirectory;
             Directory.SetCurrentDirectory(path);
-            try
-            {
-                CefRuntime.Load();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Failed to load runtime: " + ex.Message);
-                CefLoader.Load();
-            }
 
             // Starting stonehenge backend
             Console.WriteLine("Starting stonehenge backend");
@@ -78,24 +62,11 @@ namespace StonehengeChromelySample
                 .WithHostTitle(options.Title)
                 .WithHostIconFile("stonehenge-chromely.ico")
                 .WithAppArgs(args)
-#if LINUX
-                //TODO: Can be removed using Chromely v0.9.3
-                .WithCustomSetting(CefSettingKeys.MultiThreadedMessageLoop, false)
-                .WithCustomSetting(CefSettingKeys.SingleProcess, true)
-                .WithCustomSetting(CefSettingKeys.NoSandbox, true)
-
-                .WithCommandLineArg("disable-extensions", "1")
-                .WithCommandLineArg("disable-gpu", "1")
-                .WithCommandLineArg("disable-gpu-compositing", "1")
-                .WithCommandLineArg("disable-smooth-scrolling", "1")
-                .WithCommandLineArg("no-sandbox", "1")
-                .WithCommandLineArg("no-zygote", "1")
-#endif
                 .WithHostSize(1000, 600)
-                .RegisterCustomrUrlScheme("http", "localhost")
+                .RegisterCustomerUrlScheme("http", "localhost")
                 .WithStartUrl(startUrl);
 
-            using (var window = new CefGlueBrowserWindow(config))
+            using (var window = ChromelyWindow.Create(config))
             {
                 var exitCode = window.Run(args);
                 if (exitCode != 0)
