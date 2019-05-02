@@ -51,6 +51,8 @@ namespace StonehengeChromelySample
 
             var config = ChromelyConfiguration
                 .Create()
+                .WithLoadingCefBinariesIfNotFound(true)
+                .WithSilentCefBinariesLoading(true)
                 // ReSharper disable once RedundantArgumentDefaultValue
                 .WithHostMode(WindowState.Normal, true)
                 .WithHostTitle(options.Title)
