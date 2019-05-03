@@ -40,7 +40,7 @@ namespace StonehengeChromelySample
             var provider = StonehengeResourceLoader
                 .CreateDefaultLoader(new VueResourceProvider());
             var host = new KestrelHost(provider, options);
-            if (!host.Start("localhost", 8888))
+            if (!host.Start("localhost", 0))
             {
                 Console.WriteLine("Failed to start stonehenge server");
             }
