@@ -32,7 +32,8 @@ namespace StonehengeChromelySample.ViewModels
 
         
         public string RuntimeDirectory => RuntimeEnvironment.GetRuntimeDirectory();
-        public bool IsSelfHosted { get; set; }
+        public bool IsSelfHosted { get; private set; }
+        public bool IsNetCore { get; private set; }
 
         public string ClrVersion => RuntimeEnvironment.GetSystemVersion();
 
@@ -47,9 +48,11 @@ namespace StonehengeChromelySample.ViewModels
             _updater = new Task(UpdateView, _cancelUpdate.Token);
             _updater.Start();
             
-            var runtime = Path.GetFullPath(Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "."));
-            var app = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "."));
-            IsSelfHosted = runtime == app;
+            var runtimePath = Path.GetFullPath(Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "."));
+            var applicationPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "."));
+            IsSelfHosted = runtimePath == applicationPath;
+
+            IsNetCore = RuntimeInformation.FrameworkDescription.Contains("Core");
         }
 
         private void UpdateView()
