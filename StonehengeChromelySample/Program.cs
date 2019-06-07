@@ -30,6 +30,8 @@ namespace StonehengeChromelySample
 
             // Starting stonehenge backend
             Console.WriteLine("Starting stonehenge backend");
+            var provider = StonehengeResourceLoader
+                .CreateDefaultLoader(new VueResourceProvider());
             var options = new StonehengeHostOptions
             {
                 Title = "Demo",
@@ -37,8 +39,6 @@ namespace StonehengeChromelySample
                 ServerPushMode = ServerPushModes.LongPolling,
                 PollIntervalMs = 1000
             };
-            var provider = StonehengeResourceLoader
-                .CreateDefaultLoader(new VueResourceProvider());
             var host = new KestrelHost(provider, options);
             if (!host.Start("localhost", 8080))
             {
