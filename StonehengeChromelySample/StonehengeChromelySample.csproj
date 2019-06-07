@@ -6,8 +6,8 @@
         <TargetFrameworks>net472;netcoreapp2.1</TargetFrameworks>
         <AssemblyName>StonehengeChromelySample</AssemblyName>
         <RootNamespace>StonehengeChromelySample</RootNamespace>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <Version>2.0.0</Version>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <Version>1.2.0</Version>
         <PackageVersion>2.0.0</PackageVersion>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
@@ -36,12 +36,22 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="app\start.html" />
+      <None Remove="app\about.html" />
+      <None Remove="app\about.png" />
+      <None Remove="app\index.html" />
+      <None Remove="app\information.html" />
+      <None Remove="app\information.png" />
+      <None Remove="app\styles\sample.css" />
       <None Remove="stonehenge-chromely.ico" />
       <Content Include="stonehenge-chromely.ico">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-      <EmbeddedResource Include="app\start.html" />
+      <EmbeddedResource Include="app\about.png" />
+      <EmbeddedResource Include="app\index.html" />
+      <EmbeddedResource Include="app\about.html" />
+      <EmbeddedResource Include="app\information.png" />
+      <EmbeddedResource Include="app\information.html" />
+      <EmbeddedResource Include="app\styles\sample.css" />
     </ItemGroup>
 
 </Project>

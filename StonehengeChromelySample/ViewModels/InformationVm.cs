@@ -10,10 +10,11 @@ using IctBaden.Stonehenge3.Core;
 using IctBaden.Stonehenge3.Hosting;
 using IctBaden.Stonehenge3.ViewModel;
 // ReSharper disable UnusedMember.Global
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Local
 
 namespace StonehengeChromelySample.ViewModels
 {
-    public class StartVm : ActiveViewModel, IDisposable
+    public class InformationVm : ActiveViewModel, IDisposable
     {
         // ReSharper disable once MemberCanBePrivate.Global
         // ReSharper disable once MemberCanBeMadeStatic.Global
@@ -41,7 +42,7 @@ namespace StonehengeChromelySample.ViewModels
         private readonly Task _updater;
         private readonly CancellationTokenSource _cancelUpdate;
         
-        public StartVm(AppSession session) 
+        public InformationVm(AppSession session) 
             : base(session)
         {
             _cancelUpdate = new CancellationTokenSource();

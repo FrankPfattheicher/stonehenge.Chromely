@@ -1,4 +1,5 @@
 
+* 1.2.0 - 2019-06-07 Left expandable menu with icons. Secone about page.
 * 1.1.2 - 2019-02-21 CefLoader uses System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture to detect ARM platform also.
 * 1.1.1 - 2019-02-21 CefLoader now emits download and decompressing progress logs.
 * 1.1.0 - 2019-02-19 Files moved to single common StonehengeChromelySample code base folder. Win/Linux projects using links.

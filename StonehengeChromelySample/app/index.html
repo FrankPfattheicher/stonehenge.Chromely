@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stonehengeAppTitle</title>
+    <script src="src/vue.js"></script>
+    <script src="src/vue-router.js"></script>
+    <script src="src/vue-resource@1.5.1"></script>
+
+    <link type="text/css" rel="stylesheet" href="src/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="src/bootstrap-vue.css" />
+    <link rel="stylesheet" href="src/fontawesome_all.css" crossorigin="anonymous">
+    <!--stonehengeUserStylesheets-->
+
+    <script src="src/bootstrap-vue.js"></script>
+    <!--stonehengeUserScripts-->
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <b-navbar toggleable="md" type="dark" variant="dark">
+
+            <input id="menu" class="menu-toggle" type="checkbox">
+            <label for="menu" class="menu-toggle-text"><i class="fas fa-bars"></i> </label>
+
+            <b-navbar-nav type="dark" variant="dark">
+                <b-nav-item v-for="route in routes" v-if="route.visible"
+                            :to="{ name: route.name }">
+                    <img v-bind:src="route.name + '.png'" />
+                    <span style="margin-left: 0.5em;">{{route.title}}</span>
+                </b-nav-item>
+            </b-navbar-nav>
+
+        </b-navbar>
+
+        <router-view></router-view>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

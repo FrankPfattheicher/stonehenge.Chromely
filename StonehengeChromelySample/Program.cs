@@ -33,14 +33,14 @@ namespace StonehengeChromelySample
             var options = new StonehengeHostOptions
             {
                 Title = "Demo",
-                StartPage = "start",
+                StartPage = "information",
                 ServerPushMode = ServerPushModes.LongPolling,
                 PollIntervalMs = 1000
             };
             var provider = StonehengeResourceLoader
                 .CreateDefaultLoader(new VueResourceProvider());
             var host = new KestrelHost(provider, options);
-            if (!host.Start("localhost", 0))
+            if (!host.Start("localhost", 8080))
             {
                 Console.WriteLine("Failed to start stonehenge server");
             }

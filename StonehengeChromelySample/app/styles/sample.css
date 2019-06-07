@@ -1,0 +1,51 @@
+﻿
+body {
+    color: silver;
+    background-color: darkslategray;
+}
+
+h1, h2, h3, h4 {
+    color: lightskyblue;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle-text {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    user-select: none;
+    margin-left: 12px;
+}
+
+.navbar {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    flex-flow: column;
+    height: 100vh;
+}
+
+.navbar-nav {
+    flex-direction: column !important;
+}
+
+.nav-link.active img {
+    filter: opacity(1) !important;
+}
+.nav-link img {
+    filter: opacity(0.5);
+}
+.nav-link:hover img {
+    filter: opacity(1);
+}
+
+
+.navbar-nav li a span {
+    display: none;
+}
+.menu-toggle:checked ~ .navbar-nav li a span {
+    display: inline-block;
+}
