@@ -9,10 +9,11 @@ using Chromely.Core;
 using IctBaden.Stonehenge3.Core;
 using IctBaden.Stonehenge3.Hosting;
 using IctBaden.Stonehenge3.ViewModel;
+
 // ReSharper disable UnusedMember.Global
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Local
 
-namespace StonehengeChromelySample.ViewModels
+namespace Sample2.ViewModels
 {
     public class InformationVm : ActiveViewModel, IDisposable
     {

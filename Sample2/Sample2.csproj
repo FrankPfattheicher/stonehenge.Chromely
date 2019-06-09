@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RuntimeIdentifiers>win-x64;linux-arm;linux-x64</RuntimeIdentifiers>
+        <AssemblyName>Sample2</AssemblyName>
+        <RootNamespace>Sample2</RootNamespace>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <Version>1.2.0</Version>
+        <PackageVersion>2.0.0</PackageVersion>
+        <IsPackable>false</IsPackable>
+        <TargetFrameworks>net472;netcoreapp2.1</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
+      <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
+      <DefineConstants>TRACE</DefineConstants>
+      <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
+      <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Chromely.CefGlue.Gtk" Version="4.0.70" />
+        <PackageReference Include="Chromely.CefGlue.Winapi" Version="4.0.70" />
+        <PackageReference Include="Chromely.Dialogs" Version="4.0.70" />
+        <PackageReference Include="IctBaden.Stonehenge3" Version="3.4.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="app\about.html" />
+      <None Remove="app\about.png" />
+      <None Remove="app\file.html" />
+      <None Remove="app\index.html" />
+      <None Remove="app\information.html" />
+      <None Remove="app\information.png" />
+      <None Remove="app\styles\appmenu.css" />
+      <None Remove="app\styles\sample.css" />
+      <None Remove="stonehenge-chromely.ico" />
+      <Content Include="stonehenge-chromely.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <EmbeddedResource Include="app\about.png" />
+      <EmbeddedResource Include="app\index.html" />
+      <EmbeddedResource Include="app\about.html" />
+      <EmbeddedResource Include="app\file.html" />
+      <EmbeddedResource Include="app\information.png" />
+      <EmbeddedResource Include="app\information.html" />
+      <EmbeddedResource Include="app\styles\appmenu.css" />
+      <EmbeddedResource Include="app\styles\sample.css" />
+    </ItemGroup>
+
+</Project>

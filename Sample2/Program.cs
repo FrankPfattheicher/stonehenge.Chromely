@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using Chromely.CefGlue;
 using Chromely.Core;
@@ -10,10 +9,12 @@ using IctBaden.Stonehenge3.Kestrel;
 using IctBaden.Stonehenge3.Resources;
 using IctBaden.Stonehenge3.Vue;
 
-namespace StonehengeChromelySample
+namespace Sample2
 {
     internal static class Program
     {
+        public static string FileText;
+
         // ReSharper disable once UnusedParameter.Local
         private static void Main(string[] args)
         {
@@ -34,8 +35,8 @@ namespace StonehengeChromelySample
                 .CreateDefaultLoader(new VueResourceProvider());
             var options = new StonehengeHostOptions
             {
-                Title = "Demo",
-                StartPage = "information",
+                Title = "Sample 2",
+                StartPage = "file",
                 ServerPushMode = ServerPushModes.LongPolling,
                 PollIntervalMs = 1000
             };

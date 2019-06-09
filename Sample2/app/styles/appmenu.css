@@ -1,0 +1,73 @@
+/* demo page styles */
+body {
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* main menu styles */
+#appmenu {
+  font: Menu;
+    display: inline-block;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0;
+    color: MenuText;
+    background: Menu;
+}
+#appmenu li {
+    margin: 0;
+    float: left;
+    position: relative;
+    list-style: none;
+}
+#appmenu a {
+    display: block;
+    padding: 0.5em 1em;
+    cursor: default;
+    text-decoration: none;
+}
+
+/* selected menu element */
+#appmenu .current a, #appmenu li:hover > a {
+    background: ButtonHighlight;
+}
+
+/* sublevels */
+#appmenu ul li:hover a, #appmenu li:hover li a {
+    background: none;
+    border: none;
+    color: MenuText;
+}
+#appmenu ul li a:hover {
+    background: ButtonHighlight;
+    color: MenuText;
+}
+
+/* drop down */
+#appmenu li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+#appmenu ul {
+    opacity: 0;
+    visibility: hidden;
+    padding: 0;
+    min-width: 175px;
+    position: absolute;
+    background: Menu;
+    border: 1px solid ThreeDLightShadow;
+    box-shadow: 2px 2px 3px ThreeDShadow;
+}
+#appmenu ul li {
+    float: none;
+    margin: 0;
+}
+#appmenu ul a {
+    color: MenuText;
+}
+#appmenu ul ul {
+    left: 160px;
+    top: 0;
+}

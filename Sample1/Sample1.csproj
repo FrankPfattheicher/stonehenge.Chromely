@@ -3,13 +3,13 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <RuntimeIdentifiers>win-x64;linux-arm;linux-x64</RuntimeIdentifiers>
-        <AssemblyName>StonehengeChromelySample</AssemblyName>
-        <RootNamespace>StonehengeChromelySample</RootNamespace>
+        <AssemblyName>Sample1</AssemblyName>
+        <RootNamespace>Sample1</RootNamespace>
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <Version>1.2.0</Version>
         <PackageVersion>2.0.0</PackageVersion>
         <IsPackable>false</IsPackable>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <TargetFrameworks>net472;netcoreapp2.1</TargetFrameworks>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
