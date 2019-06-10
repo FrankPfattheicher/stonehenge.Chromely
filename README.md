@@ -1,4 +1,4 @@
-# Sample Application using stonehenge & Chromely libraries
+# Sample Applications using stonehenge & Chromely libraries
 
 ## Chromely
 Chromely addresses the problem of creating platform independent user interfaces. 

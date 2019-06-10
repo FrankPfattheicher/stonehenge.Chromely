@@ -13,6 +13,8 @@ namespace Sample2
 {
     internal static class Program
     {
+        // this is our "model"
+        public static string FileName;      
         public static string FileText;
 
         // ReSharper disable once UnusedParameter.Local
@@ -52,6 +54,7 @@ namespace Sample2
 
             var config = ChromelyConfiguration
                 .Create()
+                .WithDebuggingMode(true)
                 .WithLoadingCefBinariesIfNotFound(true)
                 .WithSilentCefBinariesLoading(true)
                 // ReSharper disable once RedundantArgumentDefaultValue

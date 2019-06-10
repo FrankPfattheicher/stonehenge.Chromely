@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{E717A642-CF08-484D-BD2F-9CD81F1D5B1F}"
 	ProjectSection(SolutionItems) = preProject
-		..\icon64.pdn = ..\icon64.pdn
-		..\icon64.png = ..\icon64.png
-		..\README.md = ..\README.md
-		..\ReleaseNotes.md = ..\ReleaseNotes.md
+		icon64.pdn = icon64.pdn
+		icon64.png = icon64.png
+		README.md = README.md
+		ReleaseNotes.md = ReleaseNotes.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample1", "Sample1\Sample1.csproj", "{53BDD9B4-5CFF-456D-A712-F86D57446AD6}"
