@@ -16,6 +16,7 @@ namespace Sample2
         // this is our "model"
         public static string FileName;      
         public static string FileText;
+        public static IChromelyWindow MainWindow;
 
         // ReSharper disable once UnusedParameter.Local
         private static void Main(string[] args)
@@ -43,7 +44,7 @@ namespace Sample2
                 PollIntervalMs = 1000
             };
             var host = new KestrelHost(provider, options);
-            if (!host.Start("localhost", 8080))
+            if (!host.Start("localhost", 32000))
             {
                 Console.WriteLine("Failed to start stonehenge server");
             }
@@ -66,9 +67,9 @@ namespace Sample2
                 .RegisterCustomerUrlScheme("http", "localhost")
                 .WithStartUrl(startUrl);
 
-            using (var window = ChromelyWindow.Create(config))
+            using (MainWindow = ChromelyWindow.Create(config))
             {
-                var exitCode = window.Run(args);
+                var exitCode = MainWindow.Run(args);
                 if (exitCode != 0)
                 {
                     Console.WriteLine("Failed to start chromely frontend: code " + exitCode);

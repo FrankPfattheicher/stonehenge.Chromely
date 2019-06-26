@@ -39,7 +39,7 @@ namespace Sample1
                 PollIntervalMs = 1000
             };
             var host = new KestrelHost(provider, options);
-            if (!host.Start("localhost", 8080))
+            if (!host.Start("localhost", 32000))
             {
                 Console.WriteLine("Failed to start stonehenge server");
             }

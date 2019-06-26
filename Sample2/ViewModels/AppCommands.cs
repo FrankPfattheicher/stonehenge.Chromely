@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Chromely.CefGlue;
 using Chromely.Dialogs;
 using IctBaden.Stonehenge3.Core;
 using IctBaden.Stonehenge3.Hosting;
@@ -82,5 +83,12 @@ namespace Sample2.ViewModels
                 }
             }
         }
+
+        // ReSharper disable once UnusedMember.Global
+        public void FileExit(AppSession session)
+        {
+            Program.MainWindow.Exit();
+        }
+        
     }
 }
