@@ -1,0 +1,11 @@
+// Chromely Frontend
+var config = ChromelyConfiguration .Create()
+.WithHostMode(WindowState.Normal)
+.WithHostTitle("chromely")
+.WithHostIconFile("chromely.ico")
+.WithAppArgs(args)
+.WithHostBounds(2000, 1200)
+.WithStartUrl(host.BaseUrl); 
+        
+using var window = ChromelyWindow.Create(config);
+window.Run(args);

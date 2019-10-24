@@ -63,7 +63,7 @@ namespace Sample2
                 .WithHostTitle(options.Title)
                 .WithHostIconFile("stonehenge-chromely.ico")
                 .WithAppArgs(args)
-                .WithHostSize(1000, 600)
+                .WithHostSize(2000, 1200)
                 .RegisterCustomerUrlScheme("http", "localhost")
                 .WithStartUrl(startUrl);
 

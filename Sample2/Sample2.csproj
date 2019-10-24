@@ -8,8 +8,8 @@
         <AssemblyVersion>1.2.0.0</AssemblyVersion>
         <Version>1.2.0</Version>
         <PackageVersion>2.0.0</PackageVersion>
-        <IsPackable>false</IsPackable>
-        <TargetFrameworks>net47;netcoreapp2.2</TargetFrameworks>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <LangVersion>8</LangVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
